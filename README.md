@@ -1,4 +1,5 @@
 #LZ programming language
+
 A programing language I made for really lazy typers
 
 
@@ -117,6 +118,7 @@ ei - 8
 ni - 9
 
 **word lz-number input**
+
 it automatically converts the word form to a number form. It only needs the grave accent to mark the number.
 ```
 pr `tiohfoohfinitositi rp
@@ -137,6 +139,7 @@ pr `tidoohfoohfinitositi + `ohdowawawawawawa rp
 ```
 >4.14159263
 
+**numerical lz-number input**
 
 When you type the number form with the grave accent it converts it to a string form. This form can no longer be used for operations.
 ```

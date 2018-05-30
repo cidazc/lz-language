@@ -1,5 +1,5 @@
 
-#LZ programming language
+# LZ programming language
 
 A programing language I made for really lazy typers
 

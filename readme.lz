@@ -1,0 +1,28 @@
+\this is a comment it uses a backslash
+pr '1 + 1 is' 1+1 rp
+
+userInput = st 'nothing'
+pr 'input a value' rp
+\ip userInput
+pr 'user input is ' userInput rp
+
+
+a = in 1
+if[a == 1]
+    pr 'this if works' rp
+fi
+
+
+count = in 1
+asterisks = []
+wh[count < 10]
+    pu asterisks count up
+    count = count + 1
+hw
+pa asterisks
+
+
+pr `tiohfoohfinitositi rp
+pr `tidoohfoohfinitositi rp
+pr `tidoohfoohfinitositi + `ohdowawawawawawa rp
+pr `3.14159263 ' + ' `1.000000 ' equals ' `tidoohfoohfinitositi + `ohdowawawawawawa rp

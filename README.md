@@ -1,5 +1,6 @@
 #LZ programming language
-###A programing language I made for really lazy typers
+A programing language I made for really lazy typers
+
 
 ## Synopsis
 
@@ -9,9 +10,87 @@ I wanted mine to have really lazy keywords, so all the keywords it used are only
 
 I hope that this can grow and be developed. I have actually never maintained any large project so this would be my first. Any help would be appreciated.
 
+
 ## Language Syntax
+**comments**
+```
+\this is a comment it uses a backslash
+```
+
+**printing**
+
+it uses the **pr** keyword and an **rp** keyword to end. To print a new line, write **nl**
+```
+pr '1 + 1 is' 1+1 rp
+nl
+pr '2 + 2 is' 2+2 rp
+
+```
+> 1 + 1 is 2
+>
+> 2 + 2 is 4
+
+**input**
+
+it uses the **ip** keyword so type the keyword then the variable name after **ip**
+```
+userInput = st "nothing"
+pr 'input a value' rp
+ip unserInput
+pr 'user input is ' userInput rp
+
+```
+> 2
+> userInput is 2
+
+**if statements**
+```
+a = in 1
+if[a == 1]
+    pr 'this if works' rp
+fi
+```
+> this if works
+
+**if-else statements**
+```
+a = in 1
+if[a < 1]
+    pr 'it shouldn't be here a is equal to one' rp
+fi
+el
+    pr 'eyy the code works' rp
+le
+```
+> eyy the code works
 
 
+**while loops**
+```
+count = in 1
+asterisks = []
+wh[count < 10]
+    pu asterisks count up
+    count = count + 1
+hw
+pa asterisks
+```
+>[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+**integer declaration**
+```
+integer1 = in 1
+```
+
+**float declaration**
+```
+floatVar = fl 1.0
+```
+
+**string declaration**
+```
+stringVar = st 'heyyyy'
+```
 
 ## Number System
 
@@ -37,14 +116,38 @@ ei - 8
 
 ni - 9
 
+**word lz-number input**
+it automatically converts the word form to a number form. It only needs the grave accent to mark the number.
+```
+pr `tiohfoohfinitositi rp
+```
+>314159263
+
+The word *do* denotes a decimal point.
+```
+pr `tidoohfoohfinitositi rp
+```
+>3.14159263
+
+These can also be used as a number
+
+The word *do* denotes a decimal point.
+```
+pr `tidoohfoohfinitositi + `ohdowawawawawawa rp
+```
+>4.14159263
 
 
+When you type the number form with the grave accent it converts it to a string form. This form can no longer be used for operations.
+```
+pr `3.14159263 ' + ' `1.000000 ' equals ' `tidoohfoohfinitositi + `ohdowawawawawawa rp
+```
 
 ## Motivation
 
 I actually made this language to implement the number system above but I realized more people might want to use this language for its imperative laziness.
 
-It is suprisingly a little better at lists than C. It has push, pop, top, a length, and even an isEmpty function. Thanks to Python.
+It is suprisingly a little better at lists and arrays than C (but isnt powerful yet to have pointers). It has push, pop, top, a length, and even an isEmpty function. I shall add these later on. Thanks to Python.
 
 ## Installation
 

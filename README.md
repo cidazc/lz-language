@@ -145,6 +145,7 @@ When you type the number form with the grave accent it converts it to a string f
 ```
 pr `3.14159263 ' + ' `1.000000 ' equals ' `tidoohfoohfinitositi + `ohdowawawawawawa rp
 ```
+> tidoohfoohfinitositi  +  ohdowawawawawawa  equals  4.14159263
 
 ## Motivation
 

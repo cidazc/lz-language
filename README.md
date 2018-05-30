@@ -171,11 +171,11 @@ It's actually my first time using github as well. But I do want to make this par
 
 I plan to make this a fully fledged language by 2021. But so far I am currently learning everything, this was my first language and even github project as well.
 
-### \t-function implementation
-### \t-file reading
-### \t-its first standard library
-### \t-easier installation, compilation
-### \t-its own Jupyter notebook
+- function implementation
+- file reading
+- its first standard library
+- easier installation, compilation
+- its own Jupyter notebook
 
 ## Contributors
 
@@ -185,4 +185,4 @@ I have been the only one developing this at this point. If you want to help me d
 
 The number system has been legally and appropriately requested permission for use from Gabriel Henry Lopez.
 
-MIT License 1.0
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

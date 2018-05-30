@@ -1,0 +1,228 @@
+numOfDiscs = in 10
+
+source = st 'source'
+destination = st 'destination'
+aux = st 'auxiliary'
+
+pr 'Input number of discs' rp
+ip numOfDiscs
+pr 'Input name of source tower use the apostrophe to denote a string' rp
+ip source
+pr 'Input name of destination tower use the apostrophe to denote a string' rp
+ip destination
+pr 'Input name of aux tower use the apostrophe to denote a string' rp
+ip aux
+
+totalNumMoves = in (2 ^ numOfDiscs)
+
+stower = [0]
+dtower = [0]
+atower = [0]
+
+anotherNum = in 0
+current = in 1
+modul  = in (numOfDiscs%2)
+count = in 0
+temp = in 0
+
+\pr 'Total moves is ' totalNumMoves rp
+\nl
+
+wh[count < numOfDiscs]
+  anotherNum = numOfDiscs - count
+  pu stower anotherNum up
+  count = count+1
+hw
+
+if[modul != 0]
+  wh[current < totalNumMoves]
+    modul = current%3
+    if[modul == 1]
+      if[(to dtower) == 0]
+        temp = to stower
+        pu dtower (po stower) up
+        pr 'Moving disc ' temp ' from ' source ' to ' destination rp
+        nl
+      fi
+      el
+        if[(to stower)== 0]
+          temp = to dtower
+          pu stower (po dtower) up
+          pr 'Moving disc ' temp ' from ' destination ' to ' source rp
+          nl
+        fi
+        el
+          if[(to stower) < (to dtower)]
+            temp = to stower
+            pu dtower (po stower) up
+            pr 'Moving disc ' temp ' from ' source ' to ' destination rp
+            nl
+          fi
+          el
+            temp = to dtower
+            pu stower (po dtower) up
+            pr 'Moving disc ' temp ' from ' destination ' to ' source rp
+            nl
+          le
+        le
+      le
+    fi
+    if[modul == 2]
+      if[(to atower) == 0]
+        temp = to stower
+        pu atower (po stower) up
+        pr 'Moving disc ' temp ' from ' source ' to ' aux rp
+        nl
+      fi
+      el
+        if[(to stower) == 0]
+          temp = to atower
+          pu stower (po atower) up
+          pr 'Moving disc ' temp ' from ' aux ' to ' source rp
+          nl
+        fi
+        el
+          if[(to stower) < (to atower)]
+            temp = to stower
+            pu atower (po stower) up
+            pr 'Moving disc ' temp ' from ' source ' to ' aux rp
+            nl
+          fi
+          el
+            temp = to atower
+            pu stower (po atower) up
+            pr 'Moving disc ' temp ' from ' aux ' to ' source rp
+            nl
+          le
+        le
+      le
+    fi
+    if[modul == 0]
+      if[(to atower) == 0]
+        temp = to dtower
+        pu atower (po dtower) up
+        pr 'Moving disc ' temp ' from ' destination ' to ' aux rp
+        nl
+      fi
+      el
+        if[(to dtower) == 0]
+          temp = to atower
+          pu dtower (po atower) up
+          pr 'Moving disc ' temp ' from ' aux ' to ' destination rp
+          nl
+        fi
+        el
+          if[(to atower) < (to dtower)]
+            temp = to atower
+            pu dtower (po atower) up
+            pr 'Moving disc ' temp ' from ' aux ' to ' destination rp
+            nl
+          fi
+          el
+            temp = to dtower
+            pu atower (po dtower) up
+            pr 'Moving disc ' temp ' from ' destination ' to ' aux rp
+            nl
+          le
+        le
+      le
+    fi
+    current = current+1
+  hw
+fi
+el
+  wh[current < totalNumMoves]
+    modul = current%3
+    if[modul == 1]
+      if[(to atower) == 0]
+        temp = to stower
+        pu atower (po stower) up
+        pr 'Moving disc ' temp ' from ' source ' to ' aux rp
+        nl
+      fi
+      el
+        if[(to stower) == 0]
+          temp = to atower
+          pu stower (po atower) up
+          pr 'Moving disc ' temp ' from ' aux ' to ' source rp
+          nl
+        fi
+        el
+          if[(to stower)<(to atower)]
+            temp = to stower
+            pu atower (po stower) up
+            pr 'Moving disc ' temp ' from ' source ' to ' aux rp
+            nl
+          fi
+          el
+            temp = to atower
+            pu stower (po atower) up
+            pr 'Moving disc ' temp ' from ' aux ' to ' source rp
+            nl
+          le
+        le
+      le
+    fi
+    if[modul == 2]
+      if[(to dtower) == 0]
+        temp = to stower
+        pu dtower (po stower) up
+        pr 'Moving disc ' temp ' from ' source ' to ' destination rp
+        nl
+      fi
+      el
+        if[(to stower)==0]
+          temp = to dtower
+          pu stower (po dtower) up
+          pr 'Moving disc ' temp ' from ' destination ' to ' source rp
+          nl
+        fi
+        el
+          if[(to stower) < (to dtower)]
+            temp = to stower
+            pu dtower (po stower) up
+            pr 'Moving disc ' temp ' from ' source ' to ' destination rp
+            nl
+          fi
+          el
+            temp = to dtower
+            pu stower (po dtower) up
+            pr 'Moving disc ' temp ' from ' destination ' to ' source rp
+            nl
+          le
+        le
+      le
+    fi
+    if[modul == 0]
+      if[(to atower) == 0]
+        temp = to dtower
+        pu atower (po dtower) up
+        pr 'Moving disc ' temp ' from ' destination ' to ' aux rp
+        nl
+      fi
+      el
+        if[(to dtower)==0]
+          temp = to atower
+          pu dtower (po atower) up
+          pr 'Moving disc from ' aux ' to ' destination rp
+          nl
+        fi
+        el
+          if[(to atower) < (to dtower)]
+            temp = to atower
+            pu dtower (po atower) up
+            pr 'Moving disc ' temp ' from ' aux ' to ' destination rp
+            nl
+          fi
+          el
+            temp = to dtower
+            pu atower (po dtower) up
+            pr 'Moving disc ' temp ' from ' destination ' to ' aux rp
+            nl
+          le
+        le
+      le
+    fi
+    current = current+1
+  hw
+le

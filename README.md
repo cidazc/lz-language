@@ -185,4 +185,4 @@ I have been the only one developing this at this point. If you want to help me d
 
 The number system has been legally and appropriately requested permission for use from Gabriel Henry Lopez.
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details

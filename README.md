@@ -162,6 +162,14 @@ It is suprisingly a little better at lists and arrays than C (but isnt powerful 
 
 *-(optional PLY)*
 
+
+## Running and Compilation/Interpretation
+
+To compile put the file in the same folder and copy the following text in terminal. You can replace readme.lz with any file name
+```
+python cidcompiler.py readme.lz
+```
+
 ### For first time github users
 To install, clone the git repository to your folder...
 

@@ -1,0 +1,13 @@
+
+lista = [1,2,3]
+sub1 = [`fo/`sioh,`oh/`tini,`fo/`eiei,`fo/`toei,`si/`tifoti,`ti/`tofowa,`to/`tititi,`to/`tofowa,`ohsi/`tose]
+pa sub1
+
+num = in 0
+sum = fl 0
+wh[num < (ln sub1)]
+    sum = sum + sub1[num]
+    num = num+1
+hw
+
+pr 'the chances of getting a subject is' sum rp

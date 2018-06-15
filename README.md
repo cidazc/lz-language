@@ -169,7 +169,7 @@ It is suprisingly a little better at lists and arrays than C (but isnt powerful 
 
 To compile put the file in the same folder and copy the following text in terminal. You can replace readme.lz with any file name
 ```
-python cidcompiler.py readme.lz
+python2 cidcompiler.py readme.lz
 ```
 
 ### For first time github users

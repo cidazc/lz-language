@@ -194,7 +194,7 @@ def t_newline(t):
     t.lexer.lineno += len(t.value)
 
 def t_error(t):
-    print 'Illegal character'
+    print "Illegal character"
     t.lexer.skip(1)
 
 lexer = lex.lex()

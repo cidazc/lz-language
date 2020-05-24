@@ -169,7 +169,7 @@ It is suprisingly a little better at lists and arrays than C (but isnt powerful 
 
 To compile put the file in the same folder and copy the following text in terminal. You can replace readme.lz with any file name
 ```
-python2 lz.py readme.lz
+python3 lz.py readme.lz
 ```
 
 ### For first time github users

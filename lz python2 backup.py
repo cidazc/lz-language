@@ -76,7 +76,7 @@ lzdigit = {'wa':'0','oh':'1','to':'2','ti':'3','fo':'4','fi':'5','si':'6','se':'
 lzword = {'0':'wa','1':'oh','2':'to','3':'ti','4':'fo','5':'fi','6':'si','7':'se','8':'ei','9':'ni','.':'do'}
 
 
-tokens = tokens + list(reserved.values())
+tokens = tokens + reserved.values()
 
 
 t_LESSEQ = r'\<\='
@@ -194,7 +194,7 @@ def t_newline(t):
     t.lexer.lineno += len(t.value)
 
 def t_error(t):
-    print("Illegal character")
+    print "Illegal character"
     t.lexer.skip(1)
 
 lexer = lex.lex()
@@ -553,9 +553,9 @@ def run(p):
             tempOne = run(p[1])
             tempTwo = run(p[2])
             if tempOne is not None:
-                print((tempOne), end=' ')
+                print(tempOne),
             if tempTwo is not None:
-                print((tempTwo), end=' ')
+                print(tempTwo),
             tempOne = None
             tempTwo = None
         elif p[0] == "print_new_line":
@@ -563,10 +563,10 @@ def run(p):
         #INPUT
         elif p[0] == "input":
                 if p[1] not in names:
-                    print("Variable name " + p[1] + " at line " + str(p[3]-1) + " does not exist, please use an existing name")
+                    print "Variable name " + p[1] + " at line " + str(p[3]-1) + " does not exist, please use an existing name"
                     exit()
                 else:
-                    tempZing = eval(input())
+                    tempZing = input()
                     if type(names[p[1]]) == int:
                         names[p[1]] = int(tempZing)
                     elif type(names[p[1]]) == float:
@@ -580,11 +580,11 @@ def run(p):
                 if type(tempString) == str:
                     names[run(p[1])] = run(p[2])
                 else:
-                    print("The input at line no " + str(p[3]-1) + " is not a string")
+                    print "The input at line no " + str(p[3]-1) + " is not a string"
                     exit()
                 tempString = None
             else:
-                print("Variable name " + p[1] + " at line " + str(p[3]-1) + " already in use, please use another name")
+                print "Variable name " + p[1] + " at line " + str(p[3]-1) + " already in use, please use another name"
                 exit()
         elif p[0] == "dec_int":
             if p[1] not in names:
@@ -593,16 +593,16 @@ def run(p):
                 if tempFloat == tempInt:
                     names[run(p[1])] = tempInt
                 else:
-                    print("The input at line no " + str(p[3]-1) + " is not an int")
+                    print "The input at line no " + str(p[3]-1) + " is not an int"
                     exit()
             else:
-                print("Variable name " + p[1] + " at line " + str(p[3]-1) + " already in use, please use another name")
+                print "Variable name " + p[1] + " at line " + str(p[3]-1) + " already in use, please use another name"
                 exit()
         elif p[0] == "dec_float":
             if p[1] not in names:
                 names[run(p[1])] = float(run(p[2]))
             else:
-                print("Variable name " + p[1] + " at line " + str(p[3]-1) + " already in use, please use another name")
+                print "Variable name " + p[1] + " at line " + str(p[3]-1) + " already in use, please use another name"
                 exit()
 #ARRAY RUN STUFF
         elif p[0] == "arr_dec":
@@ -640,17 +640,17 @@ def run(p):
                         if solveIndex < len (names[p[1]]):
                             return names[p[1]][solveIndex]
                         else:
-                            print("Array index out of bounds exception at line " +str(p[3]-1)+" accessing value "+str(solveIndex)+" but array only until "+str(len(names[p[1]])-1))
+                            print "Array index out of bounds exception at line " +str(p[3]-1)+" accessing value "+str(solveIndex)+" but array only until "+str(len(names[p[1]])-1)
                             exit()
                     else:
-                        print("Wrong array index type at line" + str(p[3]-1))
+                        print "Wrong array index type at line" + str(p[3]-1)
                         exit()
                     solveIndex = None
                 else:
-                    print("Variable "+p[1]+" is not an array. Error at line "+str(p[3]-1))
+                    print "Variable "+p[1]+" is not an array. Error at line "+str(p[3]-1)
                     exit()
             else:
-                print("Variable "+p[1]+" does not exist. Error at line "+str(p[3]-1))
+                print "Variable "+p[1]+" does not exist. Error at line "+str(p[3]-1)
         elif p[0] == "arr_update":
             solveIndex = run(p[2])
             if p[1] in names:
@@ -659,33 +659,33 @@ def run(p):
                         if solveIndex < len (names[p[1]]):
                             names[p[1]][solveIndex] = run(p[3])
                         else:
-                            print("Array index out of bounds exception at line " +str(p[4]-1)+" accessing value "+str(solveIndex)+" but array only until "+str(len(names[p[4]])-1))
+                            print "Array index out of bounds exception at line " +str(p[4]-1)+" accessing value "+str(solveIndex)+" but array only until "+str(len(names[p[4]])-1)
                             exit()
                     else:
-                        print("Wrong array index type at line" + str(p[4]-1))
+                        print "Wrong array index type at line" + str(p[4]-1)
                         exit()
                     solveIndex = None
                 else:
-                    print("Variable "+p[1]+" is not an array. Error at line "+str(p[4]-1))
+                    print "Variable "+p[1]+" is not an array. Error at line "+str(p[4]-1)
                     exit()
             else:
-                print("Variable "+p[1]+" does not exist. Error at line "+str(p[3]-1))
+                print "Variable "+p[1]+" does not exist. Error at line "+str(p[3]-1)
         elif p[0] == "arr_push":
             if p[1] in names:
                 if type(names[p[1]]) != list:
-                    print("Variable "+p[1]+" is not an array. Error at line "+str(p[3]-1))
+                    print "Variable "+p[1]+" is not an array. Error at line "+str(p[3]-1)
                     exit()
                 else:
                     names[p[1]].append(run(p[2]))
                     #print(names[p[1]])
             else:
-                    print("Variable "+p[1]+" not found . Error at line "+str(p[3]-1))
+                    print "Variable "+p[1]+" not found . Error at line "+str(p[3]-1)
                     exit()
 
         elif p[0] == "arr_pop":
                 if p[1] in names:
                     if type(names[p[1]]) != list:
-                        print("Variable "+p[1]+" is not an array. Error at line "+str(p[2]-1))
+                        print "Variable "+p[1]+" is not an array. Error at line "+str(p[2]-1)
                         exit()
                     else:
                         if len(names[p[1]]) != 0:
@@ -693,30 +693,30 @@ def run(p):
                             #print("eyyy",tempVar)
                             return tempVar
                         else:
-                            print("Array "+p[1]+" is empty. Error at line "+str(p[2]-1))
+                            print "Array "+p[1]+" is empty. Error at line "+str(p[2]-1)
                             exit()
                 else:
-                    print("Variable "+p[1]+" not found . Error at line "+str(p[3]-1))
+                    print "Variable "+p[1]+" not found . Error at line "+str(p[3]-1)
                     exit()
         elif p[0] == "arr_top":
                 if p[1] in names:
                     if type(names[p[1]]) != list:
-                        print("Variable "+p[1]+" is not an array. Error at line "+str(p[2]-1))
+                        print "Variable "+p[1]+" is not an array. Error at line "+str(p[2]-1)
                         exit()
                     else:
                         if len(names[p[1]]) != 0:
                             tempVar = names[p[1]][len(names[p[1]])-1]
                             return tempVar
                         else:
-                            print("Array "+p[1]+" is empty. Error at line "+str(p[2]-1))
+                            print "Array "+p[1]+" is empty. Error at line "+str(p[2]-1)
                             exit()
                 else:
-                    print("Variable "+p[1]+" not found . Error at line "+str(p[3]-1))
+                    print "Variable "+p[1]+" not found . Error at line "+str(p[3]-1)
                     exit()
         elif p[0] == "arr_empty":
                 if p[1] in names:
                     if type(names[p[1]]) != list:
-                        print("Variable "+p[1]+" is not an array. Error at line "+str(p[2]-1))
+                        print "Variable "+p[1]+" is not an array. Error at line "+str(p[2]-1)
                         exit()
                     else:
                         tempVar = len(names[p[1]])
@@ -725,40 +725,40 @@ def run(p):
                         else:
                             return False
                 else:
-                    print("Variable "+p[1]+" not found . Error at line "+str(p[3]-1))
+                    print "Variable "+p[1]+" not found . Error at line "+str(p[3]-1)
                     exit()
         elif p[0] == "arr_len":
                 if p[1] in names:
                     if type(names[p[1]]) != list:
-                        print("Variable "+p[1]+" is not an array. Error at line "+str(p[2]-1))
+                        print "Variable "+p[1]+" is not an array. Error at line "+str(p[2]-1)
                         exit()
                     else:
                         tempVar = len(names[p[1]])
                         return tempVar
                 else:
-                    print("Variable "+p[1]+" not found . Error at line "+str(p[3]-1))
+                    print "Variable "+p[1]+" not found . Error at line "+str(p[3]-1)
                     exit()
         elif p[0] == "arr_print":
                 if p[1] in names:
                     if type(names[p[1]]) != list:
-                        print("Variable "+p[1]+" is not an array. Error at line "+str(p[2]-1))
+                        print "Variable "+p[1]+" is not an array. Error at line "+str(p[2]-1)
                         exit()
                     else:
-                        print((names[p[1]]))
+                        print(names[p[1]])
                 else:
-                    print("Variable "+p[1]+" not found . Error at line "+str(p[3]-1))
+                    print "Variable "+p[1]+" not found . Error at line "+str(p[3]-1)
                     exit()
         elif p[0] == "assign_expr":
             if p[1] in names:
                 names[p[1]] = run(p[2])
             else:
-                print("Undeclared variable " + p[1] + " at line no ", str(p[3]-1))
+                print "Undeclared variable " + p[1] + " at line no ", str(p[3]-1)
                 exit()
         elif p[0] == "names":
             if p[1] in names:
                 return names[p[1]]
             else:
-                print("Undeclared variable " + p[1] + " at line no ", str(p[2]-1))
+                print "Undeclared variable " + p[1] + " at line no ", str(p[2]-1)
                 exit()
         elif p[0] == "statements":
             run(p[1])

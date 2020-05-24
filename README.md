@@ -158,11 +158,11 @@ It is suprisingly a little better at lists and arrays than C (but isnt powerful 
 
 **Dependencies:**
 
-*-Python 2.7.15*
+*Python 3*
 
-*-Linux OS*
+*Linux OS*
 
-*-(optional PLY)*
+*PLY3.5*
 
 
 ## Running and Compilation/Interpretation

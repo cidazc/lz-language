@@ -6,7 +6,7 @@ A programing language I made for really lazy typers
 
 ## Synopsis
 
-Hello there. 2 days ago we were asked to submit a programming language for a class. I made it to for really **lazy** programmers. So I called it **lazy** or **lz**.
+Hello there. 2 days ago (May 30, 2018) we were asked to submit a programming language for a class. I made it to for really **lazy** programmers. So I called it **lazy** or **lz**.
 
 I wanted mine to have really lazy keywords, so all the keywords it used are only two letters long. Plus I tried that most of the symbols used, to the best of my ability didn't use the *SHIFT* key.
 
